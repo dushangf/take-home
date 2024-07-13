@@ -1,0 +1,19 @@
+import React from 'react';
+import styled from 'styled-components';
+
+const MenuWrapper = styled.div`
+  padding: 2rem;
+  height: 100%;
+  background-color: lime;
+  min-width: 180px;
+`;
+
+interface MenuProps {
+  children: JSX.Element;
+}
+
+const Menu: React.FC<MenuProps> = ({ children }) => {
+  return <MenuWrapper>{children}</MenuWrapper>;
+};
+
+export default Menu;
