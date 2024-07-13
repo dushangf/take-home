@@ -13,7 +13,7 @@ const ArticlesWrapper = styled.div`
   height: 100vh;
 `;
 
-const Products = () => {
+const Products: React.FC = () => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [showError, setShowError] = useState(false);
 

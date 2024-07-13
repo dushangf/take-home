@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const index = () => {
-  return (
-    <div>home</div>
-  )
-}
+const Home: React.FC = () => {
+  return <div>home</div>;
+};
 
-export default index
+export default Home;
