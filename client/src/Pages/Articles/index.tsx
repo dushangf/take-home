@@ -14,7 +14,6 @@ const ArticlesWrapper = styled.div`
 
 const Products = () => {
   const [categories, setCategories] = useState<Category[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   const { category } = useParams() as any;
 
@@ -38,7 +37,6 @@ const Products = () => {
         },
       })
       .then((res) => {
-        setSelectedCategory(category);
         setCategories(res.data.data.categories);
       })
       .catch((err) => {

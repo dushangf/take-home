@@ -3,12 +3,35 @@ import { Article as IArticle } from '../../types';
 import styled from 'styled-components';
 
 const Card = styled.div`
-  border-radius: 10px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  column-span: 1;
-  background-color: white;
-  width: 250px;
-  height: max-content;
+  background: white;
+  padding: 10px;
+  margin: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+
+  @media (min-width: 640px) {
+    width: 50%;
+  }
+
+  @media (min-width: 768px) {
+    width: 50%;
+  }
+
+  @media (min-width: 1024px) {
+    width: 40%;
+  }
+
+  @media (min-width: 1280px) {
+    width: 25%;
+  }
+
+  @media (min-width: 1640px) {
+    width: 14%;
+  }
+
+  @media (min-width: 1860px) {
+    width: 16%;
+  }
 `;
 
 const Description = styled.div`

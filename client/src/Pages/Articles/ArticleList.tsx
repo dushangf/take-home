@@ -8,10 +8,14 @@ const ArticleListWrapper = styled.div`
   padding: 2rem;
   display: flex;
   flex-wrap: wrap;
+  flex-shrink: inherit;
   width: 100%;
   gap: 2rem;
-  height: max-content;
   background-color: #e0fdeb;
+  align-items: start;
+  justify-content: start;
+  height: 100vh;
+  overflow-y: scroll;
 `;
 
 interface ArticleListProps {

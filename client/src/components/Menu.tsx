@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const MenuWrapper = styled.div`
   padding: 2rem;
+  min-height: 100vh;
   height: 100%;
   background-color: lime;
   min-width: 180px;
