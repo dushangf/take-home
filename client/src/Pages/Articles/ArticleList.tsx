@@ -6,6 +6,12 @@ import axios from 'axios';
 
 const ArticleListWrapper = styled.div`
   padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 2rem;
+  height: max-content;
+  background-color: #e0fdeb;
 `;
 
 interface ArticleListProps {
