@@ -3,6 +3,7 @@ import Article from './Article';
 import styled from 'styled-components';
 import { Category, Article as IArticle } from '../../types';
 import axios from 'axios';
+import { ErrorDialog } from '../../components/Dialogs';
 
 const ArticleListWrapper = styled.div`
   padding: 2rem;
@@ -24,6 +25,7 @@ interface ArticleListProps {
 
 const ArticleList: React.FC<ArticleListProps> = (props) => {
   const [articles, setArticles] = useState<IArticle[]>([]);
+  const [showError, setShowError] = useState(false);
 
   useEffect(() => {
     axios
@@ -51,7 +53,7 @@ const ArticleList: React.FC<ArticleListProps> = (props) => {
         setArticles(res.data.data.category.articles);
       })
       .catch((err) => {
-        console.log(err);
+        setShowError(true);
       });
   }, [props.categoryId]);
 
@@ -60,6 +62,14 @@ const ArticleList: React.FC<ArticleListProps> = (props) => {
       {articles.map((article) => (
         <Article article={article} />
       ))}
+      {showError && (
+        <ErrorDialog
+          title='Server error.'
+          description='There was a problem fetching the products.'
+          buttonText='OK'
+          buttonAction={() => setShowError(false)}
+        />
+      )}
     </ArticleListWrapper>
   );
 };

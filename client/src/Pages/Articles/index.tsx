@@ -6,6 +6,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import Select from '../../components/Select';
 import Menu from '../../components/Menu';
 import styled from 'styled-components';
+import { ErrorDialog } from '../../components/Dialogs';
 
 const ArticlesWrapper = styled.div`
   display: flex;
@@ -14,6 +15,7 @@ const ArticlesWrapper = styled.div`
 
 const Products = () => {
   const [categories, setCategories] = useState<Category[]>([]);
+  const [showError, setShowError] = useState(false);
 
   const { category } = useParams() as any;
 
@@ -40,7 +42,7 @@ const Products = () => {
         setCategories(res.data.data.categories);
       })
       .catch((err) => {
-        console.log(err);
+        setShowError(true);
       });
   }, []);
 
@@ -58,7 +60,15 @@ const Products = () => {
           options={categories.map((c) => ({ code: String(c.id), description: c.name }))}
         />
       </Menu>
-      <ArticleList categoryId={category as string} />
+      <ArticleList categoryId={category as string} />\
+      {showError && (
+        <ErrorDialog
+          title='Server error.'
+          description='There was a problem fetching the categories.'
+          buttonText='OK'
+          buttonAction={() => setShowError(false)}
+        />
+      )}
     </ArticlesWrapper>
   );
 };

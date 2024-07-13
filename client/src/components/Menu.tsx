@@ -5,7 +5,7 @@ const MenuWrapper = styled.div`
   padding: 2rem;
   min-height: 100vh;
   height: 100%;
-  background-color: lime;
+  background-color: #4e725b;
   min-width: 180px;
 `;
 

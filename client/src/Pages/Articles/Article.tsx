@@ -8,6 +8,10 @@ const Card = styled.div`
   margin: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  transition: transform 0.2s ease;
+  &:hover {
+    transform: scale(1.05);
+  }
 
   @media (min-width: 640px) {
     width: 50%;
@@ -54,7 +58,7 @@ const Button = styled.button`
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   width: 100%;
-  background-color: #938bdb;
+  background-color: #4e725b;
   border: none;
   padding: 1rem;
   color: white;

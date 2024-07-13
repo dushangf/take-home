@@ -6,6 +6,8 @@ const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 1rem 2rem;
+  background-color: #4e725b;
+  color: white;
 `;
 
 const Title = styled.h1`
@@ -24,9 +26,10 @@ const LinkWrapper = styled.li`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
+  color: white;
 
   &:hover {
-    color: darkred;
+    color: #009b6c;
   }
 `;
 
